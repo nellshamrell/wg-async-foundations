@@ -1,0 +1,282 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Welcome - wg-async-foundations</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="welcome.html" class="active"><strong aria-hidden="true">1.</strong> Welcome</a></li><li class="chapter-item expanded "><a href="design_notes.html"><strong aria-hidden="true">2.</strong> Design notes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="design_notes/yield_safe.html"><strong aria-hidden="true">2.1.</strong> Yield-safe lint</a></li><li class="chapter-item expanded "><a href="design_notes/stream.html"><strong aria-hidden="true">2.2.</strong> Stream trait</a></li><li class="chapter-item expanded "><a href="design_notes/generator_syntax.html"><strong aria-hidden="true">2.3.</strong> Generator syntax</a></li><li class="chapter-item expanded "><a href="design_notes/async_read_write.html"><strong aria-hidden="true">2.4.</strong> AsyncRead, AsyncWrite traits</a></li><li class="chapter-item expanded "><a href="design_notes/async_fn_in_traits.html"><strong aria-hidden="true">2.5.</strong> Async fn in traits</a></li><li class="chapter-item expanded "><a href="design_notes/mutex.html"><strong aria-hidden="true">2.6.</strong> Mutex (future-aware)</a></li><li class="chapter-item expanded "><a href="design_notes/channels.html"><strong aria-hidden="true">2.7.</strong> Async aware channels</a></li><li class="chapter-item expanded "><a href="design_notes/async_closures.html"><strong aria-hidden="true">2.8.</strong> Async closures</a></li><li class="chapter-item expanded "><a href="design_notes/join.html"><strong aria-hidden="true">2.9.</strong> Join combinator</a></li><li class="chapter-item expanded "><a href="design_notes/select.html"><strong aria-hidden="true">2.10.</strong> Select combinator</a></li><li class="chapter-item expanded "><a href="design_notes/sink_trait.html"><strong aria-hidden="true">2.11.</strong> Sink trait</a></li><li class="chapter-item expanded "><a href="design_notes/async_main.html"><strong aria-hidden="true">2.12.</strong> Async main</a></li><li class="chapter-item expanded "><a href="design_notes/async_drop.html"><strong aria-hidden="true">2.13.</strong> Async drop</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="design_notes/async_lifecycle.html"><strong aria-hidden="true">2.13.1.</strong> Async lifecycle</a></li></ol></li><li class="chapter-item expanded "><a href="design_notes/completion_based_futures.html"><strong aria-hidden="true">2.14.</strong> Completion-based futures</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">wg-async-foundations</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#welcome" id="welcome">Welcome</a></h1>
+<p>Welcome to the wg-async-foundations website!</p>
+<p><strong>Leads</strong>: <a href="https://github.com/tmandry">@tmandry</a> and <a href="https://github.com/nikomatsakis">@nikomatsakis</a></p>
+<h2><a class="header" href="#getting-involved" id="getting-involved">Getting involved</a></h2>
+<p>Our meetings take place at <a href="https://everytimezone.com/s/d96642f9">10:00 AM PST</a> every Tuesday in our <a href="https://rust-lang.zulipchat.com/#narrow/stream/187312-wg-async-foundations">Zulip stream</a>. Feel free to stop by then (or any time!) to introduce yourself.</p>
+<p><strong>If you'd like something to work on, check our <a href="https://github.com/search?q=org%3Arust-lang+is%3Aissue+label%3AAsyncAwait-Triaged+label%3AE-mentor+is%3Aopen&amp;type=Issues">mentored issues</a> for places to get started.</strong> Feel free to claim one of these by adding a comment with the text <code>@rustbot claim</code>.</p>
+<p>You can also take a look at our <a href="https://github.com/orgs/rust-lang/projects/2">ongoing work</a> to get a sense of what we're up to, and to look for more unclaimed issues you could tackle.</p>
+<h2><a class="header" href="#what-is-the-goal-of-this-working-group" id="what-is-the-goal-of-this-working-group">What is the goal of this working group?</a></h2>
+<p>This working group is focused around implementation/design of the “foundations” for Async I/O. This includes the async-await language feature but also the core Future trait and adapters.</p>
+<h3><a class="header" href="#current-focus" id="current-focus">Current focus</a></h3>
+<p>The <strong>current focus</strong> of the group is polishing the async-await
+feature and working on the async book. </p>
+<h3><a class="header" href="#overall-roadmap-and-progress" id="overall-roadmap-and-progress">Overall roadmap and progress</a></h3>
+<ul>
+<li>✅ Stabilize the <code>Future</code> trait</li>
+<li>✅ Deliver a &quot;minimal viable product&quot; (MVP) introducing <code>async fn</code> inherent functions and async blocks.</li>
+<li>⚒️ Polish the async-await feature, improving diagnostics, spurious errors, and other corner cases.</li>
+<li>⚒️ Write the <a href="https://github.com/rust-lang/async-book">async book</a>, which introduces how the core language features in support of Async I/O and teaches you how to use them.</li>
+</ul>
+<h3><a class="header" href="#future-areas" id="future-areas">Future areas</a></h3>
+<p>Possible future areas for consideration include:</p>
+<ul>
+<li>Stabilize other core traits in std, such as <code>AsyncRead</code></li>
+<li>Support async fn in traits</li>
+<li>Support async closures (and possibly an <code>AsyncFn</code> trait)</li>
+<li>Support consuming async streams conveniently (e.g., <code>for await</code> loops or some similar thing)</li>
+<li>Support authoring async streams conveniently via async generators</li>
+<li>Support async drop </li>
+</ul>
+<p>However, we've decided to largely defer this sort of work until we've
+finished off more of the polish work on async-await.</p>
+<h2><a class="header" href="#triage-meetings" id="triage-meetings">Triage meetings</a></h2>
+<p>In our weekly triage meetings, we take new issues assigned <a href="https://github.com/rust-lang/rust/labels/A-async-await"><code>A-async-await</code></a> and categorize them. The process is:</p>
+<ul>
+<li>Review the <a href="https://github.com/orgs/rust-lang/projects/2">project board</a>, from right to left:
+<ul>
+<li>Look at what got <strong>Done</strong>, and celebrate! :tada:</li>
+<li>Review <strong>In progress</strong> issues to check we are making progress and there is a clear path to finishing (otherwise, move to the appropriate column)</li>
+<li>Review <strong>Blocked</strong> issues to see if there is anything we can do to unblock</li>
+<li>Review <strong>Claimed</strong> issues to see if they are in progress, and if the assigned person still intends to work on it</li>
+<li>Review <strong>To do</strong> issues and assign to anyone who wants to work on something</li>
+</ul>
+</li>
+<li>Review <a href="https://github.com/search?q=org%3Arust-lang+is%3Aissue+label%3AA-async-await+is%3Aopen+-label%3AAsyncAwait-Triaged&amp;type=Issues">uncategorized issues</a>
+<ul>
+<li>Mark <code>P-low</code>, <code>P-medium</code>, or <code>P-high</code></li>
+<li>Add <code>P-high</code> and <em>assigned</em> <code>E-needs-mentor</code> issues to the <a href="https://github.com/orgs/rust-lang/projects/2">project board</a></li>
+<li>Mark <code>AsyncAwait-triaged</code></li>
+</ul>
+</li>
+<li>If there's still a shortage of <strong>To do</strong> issues, review the list of <a href="https://github.com/search?q=org%3Arust-lang+is%3Aissue+label%3AAsyncAwait-Triaged+label%3AP-medium+is%3Aopen&amp;type=Issues"><code>P-medium</code></a> or <a href="https://github.com/search?q=org%3Arust-lang+is%3Aissue+label%3AAsyncAwait-Triaged+label%3AP-low+is%3Aopen&amp;type=Issues"><code>P-low</code></a> issues for candidates</li>
+</ul>
+<h3><a class="header" href="#mentoring" id="mentoring">Mentoring</a></h3>
+<p>If an issue is a good candidate for mentoring, mark <code>E-needs-mentor</code> and try to find a mentor.</p>
+<p>Mentors assigned to issues should write up mentoring instructions. <strong>Often, this is just a couple lines pointing to the relevant code.</strong> Mentorship doesn't require intimate knowledge of the compiler, just some familiarity and a willingness to look around for the right code.</p>
+<p>After writing instructions, mentors should un-assign themselves, add <code>E-mentor</code>, and remove <code>E-needs-mentor</code>. On the project board, if a mentor is assigned to an issue, it should go to the <strong>Claimed</strong> column until mentoring instructions are provided. After that, it should go to <strong>To do</strong> until someone has volunteered to work on it.</p>
+<h2><a class="header" href="#links" id="links">Links</a></h2>
+<ul>
+<li><a href="https://rust-lang.zulipchat.com/#narrow/stream/187312-wg-async-foundations">wg-async-foundations Zulip</a></li>
+<li><a href="https://github.com/orgs/rust-lang/projects/2">Project board</a></li>
+</ul>
+<h2><a class="header" href="#license" id="license">License</a></h2>
+<p>Licensed under either of</p>
+<ul>
+<li>Apache License, Version 2.0 (<a href="LICENSE-APACHE">LICENSE-APACHE</a> or http://www.apache.org/licenses/LICENSE-2.0)</li>
+<li>MIT license (<a href="LICENSE-MIT">LICENSE-MIT</a> or http://opensource.org/licenses/MIT)</li>
+</ul>
+<p>at your option.</p>
+<h3><a class="header" href="#contribution" id="contribution">Contribution</a></h3>
+<p>Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in this crate by you, as defined in the Apache-2.0 license, shall
+be dual licensed as above, without any additional terms or conditions.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+                            <a rel="next" href="design_notes.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+                    <a rel="next" href="design_notes.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
